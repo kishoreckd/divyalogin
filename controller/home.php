@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['no'])) {
-    header('location:/');
-}
+// if (!isset($_SESSION['login'])) {
+//     header('location:/');
+// }
 require "view/homeview.php";

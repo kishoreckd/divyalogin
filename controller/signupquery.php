@@ -25,11 +25,9 @@ try {
     
   $sql= $app['db']->query("INSERT INTO datas(name,email,password) 
   VALUES('$name','$email',md5('$password'))");
-  // echo"done";    
   $_SESSION['data']=[
       'name'=>$name
   ];
-
   header('location:/home');
    
   }
