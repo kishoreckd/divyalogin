@@ -13,7 +13,7 @@
    
     <h1>welcome ; <?php echo $_SESSION['data']['email'] ?></h1>
 
-    <button class="logout"><a href="/logout">Logout</a></button>
+    <button class="logout"><a href="/">Logout</a></button>
 
  
 </body>

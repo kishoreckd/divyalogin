@@ -24,7 +24,7 @@ try {
   else {
     
   $sql= $app['db']->query("INSERT INTO datas(name,email,password) 
-  VALUES('$name','$email','$password')");
+  VALUES('$name','$email',md5('$password'))");
   // echo"done";    
   $_SESSION['data']=[
       'name'=>$name

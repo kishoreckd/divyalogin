@@ -26,9 +26,9 @@ $routes = [
 if (array_key_exists($_SERVER['REQUEST_URI'], $routes)) {
    require $routes[$_SERVER['REQUEST_URI']];
 }
-//  else {
-//    http_response_code(404);
-//    require 'Views/errors/404.view.php';
-// }
+ else {
+   http_response_code(404);
+   require 'view/errors/404view.php';
+}
 
 ?>
