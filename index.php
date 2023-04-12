@@ -4,6 +4,7 @@ $app = [];
 require 'connection.php';
 $app['db'] = (new database())->db;
 
+
 $routes = [
     '/' => 'controller/loginpage.php',
     '/loginquery' => 'controller/loginquery.php',
@@ -11,16 +12,9 @@ $routes = [
     '/signupquery' => 'controller/signupquery.php',
     '/home' => 'controller/home.php',
     '/logout' => 'controller/logout.php',
+    '/about' => 'controller/about.php',
 
 
-    // '/list' => 'controllers/list.php',
-    // '/delete' => 'controllers/delete.php',
-    // '/edit' => 'controllers/edit.php',
-    // '/update' => 'controllers/update.php',
-
-
-
- 
 ];
 
 if (array_key_exists($_SERVER['REQUEST_URI'], $routes)) {

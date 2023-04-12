@@ -4,5 +4,4 @@ if(!isset($_SESSION['data'])){
     header("Location:/");
 }
 
-
-require "view/homeview.php";
+require "view/aboutview.php";

@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION['data'])){
+    header("Location:/home");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,7 @@
     <link rel="stylesheet" href="./view/style.css">
 </head>
 <body>
+
     <form action="/loginquery" method="post">
         <div class="main">
             <h2>Login</h2>

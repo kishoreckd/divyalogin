@@ -11,18 +11,26 @@ $Password=$_POST['login_password'];
 
 
 try {
-
   $query= $app['db']->query("SELECT * FROM datas WHERE email = '$Email' and password =md5('$Password') ");
   $dataexist = $query->fetchAll(PDO::FETCH_OBJ);
 //   var_dump($dataexist);
 
-  if ($dataexist) {
-   
-    header("location:/home");
+  if (!$dataexist) {
+    header("location:/signuppage");
   }
   else {
+
+    $query= $app['db']->query("SELECT * FROM datas WHERE email = '$Email' and password =md5('$Password') ");
+    $dataexist = $query->fetchAll(PDO::FETCH_OBJ);
+
+
+    $_SESSION['data']=[
+      'email'=>$Email
+      ];
+     
+      header("location:/home");
     
- header("location:/signuppage");
+  
   }
 
 

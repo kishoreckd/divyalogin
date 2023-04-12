@@ -15,10 +15,13 @@
    <?php endif; ?>
 
 <form action="/signupquery" method="post">
+    <?php if(isset($_SESSION['user_already_exists_error'])): ?>
+        <span><?php echo $_SESSION['user_already_exists_error'] ?> </span>
+        <?php endif; ?>
     <div class="main">
         <h2>Sign-Up</h2>
         <label for="">UserName</label>
-        <input type="text" name="name"  placeholder="UserName" pattern="[a-z,A-Z]*" required >
+        <input type="text" name="name"  placeholder="UserName"  required >
         <label for="">Email</label>
         <input type="email" name="email" placeholder="Email" required >
 

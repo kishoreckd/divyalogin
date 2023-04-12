@@ -1,6 +1,7 @@
 <?php
 
 
+unset($_SESSION['already-exists-error']);
 
 $name=$_POST['name'];
 echo $name;
@@ -11,24 +12,26 @@ echo $Password;
 
 
 
-
 try {
 
   $query= $app['db']->query("SELECT * FROM datas WHERE email = '$email'");
   $dataexist = $query->fetchAll(PDO::FETCH_OBJ);
 
   if ($dataexist) {
-    $_SESSION['already-exists-error'] = 'The user already exists';
+    $_SESSION['user_already_exists_error'] = 'The user already exists';
     header("location:/signuppage");
   }
   else {
+    unset( $_SESSION['user_already_exists_error']);
     
   $sql= $app['db']->query("INSERT INTO datas(name,email,password) 
   VALUES('$name','$email',md5('$password'))");
+    header('location:/home');
+    
   $_SESSION['data']=[
-      'name'=>$name
+      'email'=>$email
   ];
-  header('location:/home');
+
    
   }
 
